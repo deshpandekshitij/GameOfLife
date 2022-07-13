@@ -87,7 +87,7 @@ public class GameOfLife {
 	public void printNextGenerations(boolean[][] grid, int generations) throws InterruptedException {
 		boolean[][] currentGeneration = grid;
 		for(int i = 0; i < generations; i++) {
-//			Thread.sleep(500);
+			Thread.sleep(500);
 			boolean[][] nextGeneration = nextGeneration(currentGeneration);
 			printGrid(nextGeneration);
 			currentGeneration = nextGeneration;
@@ -98,13 +98,29 @@ public class GameOfLife {
 		boolean[][] gridConfig = new boolean[15][15];
 		GameOfLife game = new GameOfLife();
 		game.printGrid(gridConfig);
+//		Glider pattern
 		gridConfig[1][2] = true;
 		gridConfig[2][3] = true;
 		gridConfig[3][1] = true;
 		gridConfig[3][2] = true;
 		gridConfig[3][3] = true;
+
+		/*
+		Oscillator pattern
+		gridConfig[1][1] = true;
+		gridConfig[1][2] = true;
+		gridConfig[1][3] = true;
 		
-		game.printNextGenerations(gridConfig, 50);
+		Still Life pattern
+		gridConfig[1][1] = true;
+		gridConfig[1][2] = true;
+		gridConfig[2][1] = true;
+		gridConfig[2][2] = true;
+		
+		*/
+		
+		
+		game.printNextGenerations(gridConfig, 10);
 	}
 
 }
