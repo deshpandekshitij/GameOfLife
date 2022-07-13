@@ -95,7 +95,7 @@ public class GameOfLife {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		boolean[][] gridConfig = new boolean[15][15];
+		boolean[][] gridConfig = new boolean[5][5];
 		GameOfLife game = new GameOfLife();
 		game.printGrid(gridConfig);
 //		Glider pattern
